@@ -1,0 +1,32 @@
+.Ratiodisplay {
+  /* border: 1px solid green; */
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+  /* height: 30%; */
+}
+
+.Ratiodisplay-title {
+  /* border: 1px solid red; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #ffffff;
+}
+
+.Ratiodisplay-display {
+  flex: 1;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Ratiodisplay-display h3 {
+  font-family: Roboto;
+  font-size: large;
+  padding-left: 2px;
+  color: #585858;
+}
