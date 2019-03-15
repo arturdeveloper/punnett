@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/punnett/precache-manifest.dd454431ae1e6b03430eead2ac160859.js"
+  "/punnett/precache-manifest.0b24866d0e89ed9668516f95104a13ed.js"
 );
 
 workbox.clientsClaim();
