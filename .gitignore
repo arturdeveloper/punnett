@@ -8,6 +8,8 @@
 #my exclude
 build
 # src
+src_*
+documentation
 # public
 *.txt
 .gitingnore

@@ -1,32 +1,41 @@
 .Ratiodisplay {
-  /* border: 1px solid green; */
-  flex: 1;
-  display: flex;
-  flex-flow: column;
-  width: 80%;
-  /* height: 30%; */
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 72%;
+    padding-bottom: 1em;
 }
 
 .Ratiodisplay-title {
-  /* border: 1px solid red; */
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  color: #ffffff;
+    flex: 4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #ffffff;
+    font-size: 1.3em;
+    padding-bottom: 1em;
 }
 
 .Ratiodisplay-display {
-  flex: 1;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-evenly;
-  align-items: center;
+    flex: 3;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    font-size: 2em;
+    height: 2em;
 }
 
 .Ratiodisplay-display h3 {
-  font-family: Roboto;
-  font-size: large;
-  padding-left: 2px;
-  color: #585858;
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 1.1em;
+    padding-left: 2px;
+    color: #585858;
+}
+
+.flash {
+    background-color: red;
 }

@@ -8,7 +8,7 @@ import Ratiodisplay from "../RatioDisplay/Ratiodisplay";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { phenRatio: [4, 0], genRatio: { YY: "0", Yy: 0, yy: 0 } };
+    this.state = { phenRatio: [4, 0], genRatio: { YY: 4, Yy: 0, yy: 0 } };
   }
 
   handleEvent = ratios => {
@@ -22,13 +22,23 @@ class App extends Component {
         <header className="App-header" />
         <div className="App-container-1">
           <div className="App-logo">
-            <h3>Logo</h3> <h4>|</h4> <h4> Mendellian Inheritance</h4>
+            <div>
+              <h3>Logo</h3> <h4 className="separator">|</h4>{" "}
+              <h4> Mendellian Inheritance</h4>
+            </div>
           </div>
           <Punnett onChange={this.handleEvent} />
         </div>
         <div className="App-container-2">
-          <Barchart phenRatio={phenRatio} />
-          <Ratiodisplay genRatio={genRatio} />
+          <div className="container2-header" />
+          <div className="container2-content">
+            <Barchart phenRatio={phenRatio} />
+          </div>
+          <div className="container2-filler" />
+          <div className="container2-content">
+            <Ratiodisplay genRatio={genRatio} />
+          </div>
+          <div className="container2-footer" />
         </div>
       </div>
     );

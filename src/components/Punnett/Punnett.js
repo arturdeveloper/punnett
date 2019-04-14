@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Punnett.css";
 import green_pea from "../../assets/green_pea.svg";
 import yellow_pea from "../../assets/yellow_pea.svg";
+import utils from "../../utils/utility_methods";
 
 function Square(props) {
   let shape = props.big === "big" ? "bigsquare" : "smallsquare";
@@ -36,39 +37,32 @@ class Diagram extends Component {
           Select two pea plant genotypes to cross.
         </h2>
         <div className="diagram-container">
-          <div className="diagram-row row1">
+          <div className="diagram-row1-sel">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
           </div>
-          <div className="diagram-text row1">
+          <div className="diagram-row2-text">
             <h3>Y</h3>
             <h3>y</h3>
           </div>
-          <div className="diagram-row row2">
-            <div className="diagram-column column1">
-              {this.renderSquare(3)}
-              {this.renderSquare(4)}
-              {this.renderSquare(5)}
-            </div>
-            <div className="diagram-column diagram-text column2">
-              <h3>Y</h3>
-              <h3>y</h3>
-            </div>
+          <div className="diagram-column1-sel">
+            {this.renderSquare(3)}
+            {this.renderSquare(4)}
+            {this.renderSquare(5)}
+          </div>
+          <div className="diagram-column2-text">
+            <h3>Y</h3>
+            <h3>y</h3>
+          </div>
 
-            <div className="diagram-column column3">
-              <div className="diagram-row column4">
-                {this.renderSquare(6, "big")}
-                {this.renderSquare(7, "big")}
-              </div>
-              <div className="diagram-row column4">
-                {this.renderSquare(8, "big")}
-                {this.renderSquare(9, "big")}
-              </div>
-            </div>
+          <div className="diagram-column3-block">
+            {this.renderSquare(6, "big")}
+            {this.renderSquare(7, "big")}
+            {this.renderSquare(8, "big")}
+            {this.renderSquare(9, "big")}
           </div>
         </div>
-        <div className="row3" />
       </div>
     );
   }
@@ -126,7 +120,8 @@ const calculateRatios = (firstCross, secondCross) => {
 };
 
 const calculateOffspring = (firstCross, secondCross) => {
-  let newOffspring = firstCross[randomFlip()] + secondCross[randomFlip()];
+  let newOffspring =
+    firstCross[utils.randomFlip()] + secondCross[utils.randomFlip()];
   newOffspring = newOffspring === "yY" ? "Yy" : newOffspring;
 
   return newOffspring;
@@ -167,10 +162,6 @@ const calculatePossibleOffsprings = (first, second) => {
   });
 
   return offsprings;
-};
-
-const randomFlip = () => {
-  return Math.floor(Math.random() * 2);
 };
 
 export default Punnett;
